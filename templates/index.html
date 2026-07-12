@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Price Prediction</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <div class="card">
+            <h1>Stock Price Prediction System</h1>
+            <p class="subtitle">Enter a stock symbol to predict the next closing price</p>
+
+            <div class="input-group">
+                <input type="text" id="symbolInput" placeholder="e.g. AAPL, TSLA, RELIANCE.NS" />
+                <button id="predictBtn" onclick="predictStock()">Predict</button>
+            </div>
+
+            <p id="loading" style="display:none;">Fetching data and training model, please wait...</p>
+            <p id="errorMsg" class="error" style="display:none;"></p>
+
+            <div id="resultBox" style="display:none;">
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="label">Predicted Next Close</span>
+                        <span class="value" id="predictedPrice"></span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="label">Last Close Price</span>
+                        <span class="value" id="lastPrice"></span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="label">Trend</span>
+                        <span class="value" id="trend"></span>
+                    </div>
+                </div>
+
+                <canvas id="myChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
